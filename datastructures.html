@@ -48,12 +48,12 @@
 
     this.randomCard = function (deck)
     {
-      var random, randomCard;
-      random = Math.floor(Math.random() * (deck.length - 1));
-      randomCard = deck.cards[random];
-      deck.cards.splice(random, 1);
-      this.discard.cards.push(random);
-      return randomCard;
+      var randSelect, randCard;
+      randSelect = Math.floor(Math.random() * (deck.count - 1));
+      randCard = deck.cards[randSelect];
+      deck.cards.splice(randSelect, 1);
+      this.discard.cards.push(randCard);
+      return randCard;
     }
 
     this.highCard = function (next, last)
