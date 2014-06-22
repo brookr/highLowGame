@@ -7,18 +7,19 @@
     this.cards = [];
     this.count = function()
     {
-      return this.cards.length();
+      return this.cards.length;
     }
     this.init = function()
     {
-      for (s=1; s<=4; s++)
+      for (s=1; s<5; s++)
       {
-        for (r=1; r<=13; r++)
+        for (r=1; r<14; r++)
         {
           this.cards.push(new Card(r, s));
         }
       }
     }
+
     this.shuffle = function ()
     {
       var m = this.cards.length, t, rand, swap;
@@ -34,8 +35,8 @@
 
   function Card(rank, suit)
   {
-    this.rank = ranks[(rank-1)];
-    this.suit = suits[(suit-1)];
+    this.rank = ranks[rank-1];
+    this.suit = suits[suit-1];
     this.show = function ()
     {
       return this.rank + " of " + this.suit;
@@ -49,7 +50,7 @@
     this.randomCard = function (deck)
     {
       var randSelect, randCard;
-      randSelect = Math.floor(Math.random() * (deck.count - 1));
+      randSelect = Math.floor(Math.random() * (deck.count() - 1));
       randCard = deck.cards[randSelect];
       deck.cards.splice(randSelect, 1);
       this.discard.cards.push(randCard);
@@ -102,9 +103,9 @@
       wrongTimes = 0;
 
       firstCard = this.randomCard(deck);
-      nextCard = this.randomCard(deck);
 
       do {
+        nextCard = this.randomCard(deck);
         guess = prompt("The first card is " + firstCard.show() + ". Do you think the next card will be higher or lower? (Type 'h' or 'l').");
         guess = this.thisOrThat(guess, "h", "l");
 
@@ -122,7 +123,7 @@
         playAgain = this.thisOrThat(playAgain, "yes", "no");
         firstCard = nextCard;
 
-        if (deck.count == 0) //If the last card is drawn, shuffles the discard pile back in
+        if (deck.count() == 0) //If the last card is drawn, shuffles the discard pile back in
         {
           this.discard.shuffle();
           deck = this.discard;
