@@ -120,16 +120,15 @@
           alert("The next card is " + nextCard.show() + ". You were wrong!");
           wrongTimes++;
         }
-        playAgain = prompt("Continue? (Type 'y' or 'n'.)");
-        playAgain = this.thisOrThat(playAgain, "y", "n");
-        firstCard = nextCard;
-
         if (deck.count() == 0) //If the last card is drawn, shuffles the discard pile back in
         {
           this.discard.shuffle();
           deck = this.discard;
           this.discard = [];
         }
+        playAgain = prompt("Continue? (Type 'y' or 'n'.)");
+        playAgain = this.thisOrThat(playAgain, "y", "n");
+        firstCard = nextCard;
       } while (playAgain == "y");
 
       alert("Thanks for playing! You guessed right " + rightTimes + " time(s), and you guessed wrong " + wrongTimes + " time(s).");
