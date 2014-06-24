@@ -19,7 +19,6 @@
         }
       }
     }
-
     this.shuffle = function ()
     {
       var m = this.cards.length, t, rand, swap;
@@ -31,6 +30,14 @@
         this.cards[rand] = swap;
       }
       alert("Shuffling...");
+    }
+    this.listCards = function ()  //Debugging function. Posts to the console all the cards in the deck.
+    {
+      var m = this.count();
+      for (i=0; i<m; i++)
+      {
+        console.log(this.cards[i].show());
+      }
     }
   }
 
@@ -142,4 +149,6 @@
   var newGame = new highLowGame(d);
 
   newGame.gameLoop(d);
+
+  d.listCards();  //For debugging purposes. Just want to see what's in my deck.
 </script>
