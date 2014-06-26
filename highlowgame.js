@@ -1,4 +1,3 @@
-<script>
   var suits = ["Clubs", "Diamonds", "Hearts", "Spades"];
   var ranks = [2, 3, 4, 5, 6, 7, 8, 9, 10, "Jack", "Queen", "King", "Ace"];
 
@@ -151,4 +150,3 @@
   newGame.gameLoop(d);
 
   d.listCards();  //For debugging purposes. Just want to see what's in my deck.
-</script>
