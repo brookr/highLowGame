@@ -138,25 +138,24 @@
       } while (playAgain == "y");
 
       alert("Thanks for playing! You guessed right " + rightTimes + " time(s), and you guessed wrong " + wrongTimes + " time(s).");
-      $("button").fadeIn();
     }
   }
 
   var playButton = function ()
   {
+    console.log("Button has been pressed.");  //for debugging
     var d = new Deck();
     d.init();
     d.shuffle();
     var newGame = new highLowGame(d);
     newGame.gameLoop(d);
-    console.log("Button has been pressed.");
+    $("button").fadeIn(2000);
   }
+
   $(document).ready(function(){
     $("#play").on("click", function()
     {
-      $("button").fadeOut();
-      playButton();
+      $("button").fadeOut({complete: playButton})
     });
-    console.log("ready")
+    console.log("ready");  //for debugging
   })
-
