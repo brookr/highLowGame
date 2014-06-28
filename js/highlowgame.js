@@ -138,23 +138,25 @@
       } while (playAgain == "y");
 
       alert("Thanks for playing! You guessed right " + rightTimes + " time(s), and you guessed wrong " + wrongTimes + " time(s).");
+      $("button").fadeIn();
     }
   }
 
-    var playButton = function ()
-    {
-      var d = new Deck();
-      d.init();
-      d.shuffle();
-      var newGame = new highLowGame(d);
-      newGame.gameLoop(d);
-      console.log("Button has been pressed.");
-    }
+  var playButton = function ()
+  {
+    var d = new Deck();
+    d.init();
+    d.shuffle();
+    var newGame = new highLowGame(d);
+    newGame.gameLoop(d);
+    console.log("Button has been pressed.");
+  }
   $(document).ready(function(){
     $("#play").on("click", function()
-      {
-        playButton();
-      });
+    {
+      $("button").fadeOut();
+      playButton();
+    });
     console.log("ready")
   })
 
