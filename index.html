@@ -12,7 +12,8 @@
 
         <link rel="stylesheet" href="css/normalize.min.css">
         <link rel="stylesheet" href="css/main.css">
-
+        <script src="js/vendor/jquery-1.11.0.min.js"></script>
+        <script src="js/highlowgame.js"></script>
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     </head>
     <body>
@@ -25,7 +26,7 @@
                 <h1 class="title">High or low?</h1>
                 <nav>
                     <ul>
-                        <li><a href="#">The only page.</a></li>
+                        <li><a href="#">Pointless Nav Button</a></li>
                     </ul>
                 </nav>
             </header>
@@ -40,8 +41,8 @@
                         <p>It's pretty simple. You're shown a card, and then you're asked to guess if the next card is higher or lower. Then you're told if you're right or wrong, and you guess whether the following card is higher or lower. Your wins and losses will be tallied at the end</p>
                     </header>
                     <section>
-                        <h2>Not important.</h2>
-                        <p>There's really no need for this paragraph.</p>
+                        <h2>Give it a try.</h2>
+                        <button id="Play">Play</button>
                     </section>
                     <footer>
                         <h3>Pointless Footer</h3>
@@ -50,7 +51,7 @@
                 </article>
 
                 <aside>
-                    <h3>Simple Stuff:</h3>
+                    <h3 id="simple">Simple Stuff:</h3>
                     <p>Just keep guessing if the next card will be higher or lower. This is really simple, you guys.</p>
                 </aside>
 
@@ -63,19 +64,8 @@
             </footer>
         </div>
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
 
         <script src="js/main.js"></script>
-
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X');ga('send','pageview');
-        </script>
     </body>
 </html>

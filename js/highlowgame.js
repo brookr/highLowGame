@@ -141,12 +141,20 @@
     }
   }
 
-  var d = new Deck();
-  d.init();
-  d.shuffle();
+    var playButton = function ()
+    {
+      var d = new Deck();
+      d.init();
+      d.shuffle();
+      var newGame = new highLowGame(d);
+      newGame.gameLoop(d);
+      console.log("Button has been pressed.");
+    }
+  $(document).ready(function(){
+    $("#simple").on("click", function()
+      {
+        playButton();
+      });
+    console.log("ready")
+  })
 
-  var newGame = new highLowGame(d);
-
-  newGame.gameLoop(d);
-
-  d.listCards();  //For debugging purposes. Just want to see what's in my deck.
