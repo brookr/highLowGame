@@ -151,7 +151,7 @@
       console.log("Button has been pressed.");
     }
   $(document).ready(function(){
-    $("#simple").on("click", function()
+    $("#play").on("click", function()
       {
         playButton();
       });
