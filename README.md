@@ -1,4 +1,4 @@
-dataStructures
+High/Low Game
 ==============
 
 Data structures assignment for Week 3 of Code Fellows Foundations I.
