@@ -141,6 +141,10 @@
     }
   }
 
+  var showButton = function() {
+    $("button").fadeIn(2000, function() { console.log("")});
+  }
+
   var playButton = function ()
   {
     console.log("Button has been pressed.");  //for debugging
@@ -149,7 +153,8 @@
     d.shuffle();
     var newGame = new highLowGame(d);
     newGame.gameLoop(d);
-    $("button").fadeIn(2000);
+    console.log('back in playButton...')
+    setTimeout(showButton, 0);
   }
 
   $(document).ready(function(){
